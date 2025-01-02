@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHA-256 Hash Generator</title>
+</head>
+
+    <style>
+    body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: transparent;
+    color: bisque,red,yellowgreen,whitesmoke;
+    transition-timing-function:color
+    .0(0.175, 0.885, 0.32, 1.275);
+}
+    </style>
+    <body>
+    <center> 
+
+    <h1>SHA-256 Hash Generator</h1>
+    <form method="POST">
+        <label for="input_string">Enter Values:</label>
+        <input type="text" id="input_string" name="input_string" required>
+        <button type="submit">ENTER</button>
+    </form>
+    
+    <p id="demo">Click the button to show current date and time:</p>
+    <button onclick="displayDate()">Show Date and Time</button>
+
+    <script>
+        function displayDate() {
+            document.getElementById("demo").innerHTML = "C: " + new Date();
+        }
+    </script>
+    </center>
+    {% if hashed_value %}
+        <h2>Input: {{ input_string }}</h2>
+        <h3>SHA-256 Hash: {{ hashed_value }}</h3>
+    {% endif %}
+</body>
+</html>
